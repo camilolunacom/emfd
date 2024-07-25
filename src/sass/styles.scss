@@ -1,0 +1,181 @@
+@use "normalize.css/normalize.css";
+
+:root {
+  --almost-black: #2f2f2f;
+  --main-background-color: var(--almost-black);
+  --pure-white: #fff;
+  --light-gray: #efefef;
+  --gray: #c0c0c0;
+  --medium-gray: #8f8f8f;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+  background: var(--main-background-color);
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--almost-black);
+  padding: 4rem 4rem 1rem;
+  text-wrap: balance;
+
+  @media screen and (max-width: 1024px) {
+    padding: 3rem 2rem 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 9.5rem 1rem 1rem;
+    font-size: 16px;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.8em;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.container {
+  max-width: 82.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 1rem;
+  background: var(--light-gray);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(90, 90, 90, 0.2) 100%
+    ),
+    var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__title {
+    font-size: 3.75rem;
+    line-height: 1.31666667;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__img {
+    display: block;
+    border-radius: 240px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__description {
+    max-width: 44rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__form-container {
+    max-width: 44rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    form > div {
+      padding: 0 !important;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__img {
+      margin-top: -8.5rem;
+    }
+  }
+}
+
+.listen-on {
+  max-width: 68.5rem;
+
+  &__heading {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--pure-white);
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 1.34375;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__heading {
+      font-size: 1.625rem;
+      margin-top: 3rem;
+    }
+
+    &__grid {
+      gap: 1rem;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  color: var(--pure-white);
+  font-size: 0.8em;
+  margin-top: 4rem;
+  color: var(--medium-gray);
+
+  &__link {
+    color: var(--gray);
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.875em;
+    margin-top: 3rem;
+  }
+}
